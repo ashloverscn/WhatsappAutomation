@@ -42,6 +42,7 @@ After create an excel workbook open your terminal and run ```python script.py```
 
 #### For manual use of binary chromedriver follow the links below you will get your answer
 https://googlechromelabs.github.io/chrome-for-testing/#stable 
+
 https://pypi.org/project/chromedriver-py/
 
 ### Author Note
