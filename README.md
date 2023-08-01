@@ -40,8 +40,9 @@ After create an excel workbook open your terminal and run ```python script.py```
   <img src="https://user-images.githubusercontent.com/68864416/190376035-4a04a778-5065-45c5-a636-f786c92af594.PNG" width="720">
 <div>
 
-
-
+#### For manual use of binary chromedriver follow the links below you will get your answer
+https://googlechromelabs.github.io/chrome-for-testing/#stable 
+https://pypi.org/project/chromedriver-py/
 
 ### Author Note
 This script is for educational purposes. Commercial use of this repo is strictly prohibited.
