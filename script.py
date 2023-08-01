@@ -14,7 +14,7 @@ from selenium.webdriver.common.keys import Keys
 excel_data = pandas.read_excel('data.xlsx', sheet_name='data')
 
 #driver = webdriver.Chrome(ChromeDriverManager().install())
-driver = webdriver.Chrome(executable_path=binary_path)
+#driver = webdriver.Chrome(executable_path=binary_path)
 driver = webdriver.Chrome()
 
 driver.get('https://web.whatsapp.com')
