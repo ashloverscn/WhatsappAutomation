@@ -1,18 +1,21 @@
 from selenium import webdriver
+from selenium.webdriver.chrome.service import Service
+from chromedriver_py import binary_path
 from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from selenium.webdriver.common.by import By
 from webdriver_manager.chrome import ChromeDriverManager
 from time import sleep
+from random import randint
+from numpy import random
 import pandas
 from selenium.webdriver.common.keys import Keys
 
+excel_data = pandas.read_excel('data.xlsx', sheet_name='data')
 
-excel_data = pandas.read_excel('data.xlsx', sheet_name='data') // first argument your workbook name and second argument your worksheet name
-
-
-
-driver = webdriver.Chrome(ChromeDriverManager().install())
+#driver = webdriver.Chrome(ChromeDriverManager().install())
+driver = webdriver.Chrome(executable_path=binary_path)
+driver = webdriver.Chrome()
 
 driver.get('https://web.whatsapp.com')
 count = 1
@@ -25,8 +28,12 @@ for column in excel_data['Contact'].tolist():
         wait = WebDriverWait(driver, 10)
         sleep(2)
         wait.until(EC.presence_of_element_located((By.XPATH, xpath_val))).send_keys(Keys.ENTER)
-        sleep(5)
         print('Message sent successfully: ' + str(excel_data['Contact'][count]))
+        rdelay = randint(1,7)
+        #rdelay = random.uniform(2, 4)
+        print(rdelay)
+        sleep(rdelay)
+        
     except Exception as e:
         print('Message can not sent: ' + str(excel_data['Contact'][count]) + str(e))
     count = count + 1
